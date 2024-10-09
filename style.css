@@ -1,0 +1,62 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+    height: 10000px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+img {
+    width: 50%;
+    height: auto;
+}
+
+
+#content {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+#viewport {
+    perspective: 1000px; 
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+.frame {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; 
+    text-align: center;
+}
+
+
+.frame.text h1 {
+    color: white;
+    padding: 2em;
+}
+
+.frame.image img {
+    width: 200%;
+    height: auto;
+}
+
+.frame.box {
+    border-radius: 0.5em; 
+    
+    padding: 
