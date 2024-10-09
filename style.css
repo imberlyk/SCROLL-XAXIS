@@ -13,11 +13,24 @@ body {
 
 
 img {
-    width: 50%;
+   
     height: auto;
 }
 
 
+#hand{
+    position: relative;
+    z-index: 3;
+    height:100vh;
+    width: 100vw;
+}
+.immerda {
+    position: relative;
+    z-index: 33;
+
+    color:white;
+
+}
 #content {
     position: fixed; 
     top: 0;
