@@ -1,5 +1,5 @@
 var lastPos = window.scrollY,
-    zSpacing = -1000, // The distance between frames on the Z axis
+    zSpacing = -3000, // The distance between frames on the Z axis
     zVals = [], // To store the Z positions of each frame
     $frames = document.querySelectorAll(".frame"), // Selecting all frames
     frames = Array.from($frames), // Convert NodeList to array
@@ -8,7 +8,7 @@ var lastPos = window.scrollY,
 
 // Initialize Z positions for each frame
 frames.forEach(function (frame, i) {
-    zVals.push((numFrames - i) * zSpacing);
+    zVals.push((numFrames - i) * zSpacing); // Set the Z index distance for each frame
     frame.style.transform = `translateZ(${zVals[i]}px)`; // Set initial Z position
 });
 
@@ -21,8 +21,10 @@ window.addEventListener("scroll", function () {
     frames.forEach(function (frame, i) {
         zVals[i] += delta * -1.5; // Adjust Z position by the scroll delta
         var transform = `translateZ(${zVals[i]}px)`; // Apply the Z position as a 3D transform
-        var opacity = zVals[i] < 200 ? 1 : 1 - parseInt((zVals[i] - 200) / 800 * 10) / 10; // Calculate opacity based on Z position
-        var display = zVals[i] > 1000 ? "none" : "block"; // Hide frame if too far away
+
+        // Adjust the opacity to fade out even more slowly
+        var opacity = zVals[i] < 200 ? 1 : 1 - parseInt((zVals[i] - 200) / 4000 * 10) / 10;
+        var display = zVals[i] > 4000 ? "none" : "block"; // Show frames longer by adjusting the Z-value threshold
 
         // Apply the transform, opacity, and display styles to the frame
         frame.style.transform = transform;
