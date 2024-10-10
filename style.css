@@ -10,6 +10,13 @@ body {
     padding: 0;
 }
 
+.vertical{
+    position:absolute;
+    top: 800px;
+    left: 100px;
+    z-index: 10;
+    width:40%;
+}
 
 #hand {
     position: fixed;
